@@ -1,0 +1,206 @@
+/* ==========================================
+   小区物业管理系统 - 全局样式
+   ========================================== */
+
+/* CSS变量 - 主题配色 */
+:root {
+  /* 主色调 - 深蓝色系 */
+  --primary-color: #1E3A5F;
+  --primary-light: #2E5A8F;
+  --primary-dark: #0F2A4F;
+  
+  /* 辅助色 - 绿色系 */
+  --success-color: #4CAF50;
+  --success-light: #81C784;
+  
+  /* 警告和错误 */
+  --warning-color: #FF9800;
+  --danger-color: #F44336;
+  
+  /* 中性色 */
+  --text-primary: #303133;
+  --text-regular: #606266;
+  --text-secondary: #909399;
+  --text-placeholder: #C0C4CC;
+  
+  /* 背景色 */
+  --bg-color: #F5F7FA;
+  --bg-white: #FFFFFF;
+  --bg-page: #EBEEF5;
+  
+  /* 边框 */
+  --border-color: #DCDFE6;
+  --border-light: #E4E7ED;
+  
+  /* 阴影 */
+  --shadow-base: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+  /* 圆角 */
+  --radius-base: 8px;
+  --radius-small: 4px;
+  --radius-large: 12px;
+}
+
+/* 全局重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  
+  &:hover {
+    color: var(--primary-light);
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+  
+  &:hover {
+    background: var(--text-secondary);
+  }
+}
+
+/* 通用工具类 */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.ml-10 { margin-left: 10px; }
+.mr-10 { margin-right: 10px; }
+.p-20 { padding: 20px; }
+
+/* 卡片样式 */
+.card {
+  background: var(--bg-white);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-light);
+  padding: 20px;
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  padding-left: 12px;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* 搜索区域 */
+.search-area {
+  background: var(--bg-white);
+  padding: 20px;
+  border-radius: var(--radius-base);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-light);
+}
+
+/* 表格区域 */
+.table-area {
+  background: var(--bg-white);
+  padding: 20px;
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-light);
+}
+
+/* 状态标签 */
+.status-tag {
+  &.pending {
+    background: #FFF3E0;
+    color: #E65100;
+  }
+  
+  &.processing {
+    background: #E3F2FD;
+    color: #1565C0;
+  }
+  
+  &.completed {
+    background: #E8F5E9;
+    color: #2E7D32;
+  }
+}
+
+/* 动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.2s ease-in;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
